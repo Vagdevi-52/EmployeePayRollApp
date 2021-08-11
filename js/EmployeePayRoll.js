@@ -45,3 +45,4 @@ class PayrollModel {
         "\nDepartments = " + this.department + "\nProfile = " + this.profile + 
         "\nNote = " + this.note;
     }
+}
