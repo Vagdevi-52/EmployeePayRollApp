@@ -8,60 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat: ital, wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\Images\logo.png">
     <title> Employee Payroll App</title>
-    <script defer src="../js/home.js"></script>
+    <script defer src="C:\Users\MY PC\Desktop\EmployeePayRollApp\js\Home.js"></script>
 </head>
 <body>
     <!--UC1: Add header-->
-    <header>
+    <header class = "header-content header">
         <div class= "logo-content">
         <img src="C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\Images\logo.png" alt= "">
-        <div>
-            <span class="emp-text">EMPLOYEE</span><br>
-            <span class="emp-text emp-payroll">PAYROLL</span>
+            <div>
+                <span class="emp-text">EMPLOYEE</span><br>
+                <span class="emp-text emp-payroll">PAYROLL</span>
+            </div>
         </div>
-    </div>
-</header>
-<div class = "main-content">
-    <div class="header-content">
-        <div class = "emp-detail-text">
-            Employee Details<div class = "emp-count">10</div>
+    </header>
+    <div class = "main-content">
+        <div class="header-content">
+            <div class = "emp-detail-text">
+                Employee Details<div class = "emp-count">10</div>
+            </div>
+            <a href="C:\Users\MY PC\Desktop\EmployeePayRollApp\pages\pages_form.html" class="add-button">
+            <img src="C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\Icon\add-24px.svg" alt="">Add User</a>
         </div>
-        <a href="C:\Users\MY PC\Desktop\EmployeePayRollApp\pages\pages_form.html" class="add-button">
-        <img src="C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\Icon\add-24px.svg" alt="">Add User</a>
+        <div class="table-main">
+            <table id="display" class="table">
+                
+            </table>
+        </div>  
     </div>
-    <div class="table-main">
-        <table id="display" class="table">
-            <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Department</th>
-                <th>Salary</th>
-                <th>Start Date</th>
-                <th>Actions</th>
-            </tr>
-            <tr>
-                <td>
-                    <img class="profile" alt="" src="C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\ProfileImages\Ellipse -1.png">
-                </td>
-                <td>Vagdevi</td>
-                <td>FeMale</td>
-                <td>
-                    <div class="dept-label">Finance</div>
-                    <div class="dept-label">sales</div>
-                </td>
-                <td>8000000</td>
-                <td>18 December 2016</td>
-                <td>
-                    <img id="1" onclick="remove(this)" alt="delete" src="C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\Icon\delete-black-18dp.svg">
-                    <img id="1" onclick="update(this)" alt="update" src="C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\Icon\create-black-18dp.svg">
-                </td>
-            </tr>
-        </table>
-    </div>  
-</div>
-</body>
-</html> 
-</div>
 </body>
 </html>
