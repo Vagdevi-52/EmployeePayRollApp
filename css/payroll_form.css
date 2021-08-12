@@ -15,6 +15,10 @@ body {
     align-items: center;
     border: 0px solid green;
 }
+.linkHome{
+    display: inline-block;
+    text-decoration: none;
+}
 
 .logo-content {
     display: flex;
@@ -91,7 +95,7 @@ label {
 
 .text {
     font-size: 16px;
-    color: #42515f;
+    color: #435260;
     opacity: 1;
     font-family: Roboto;
 }
@@ -104,7 +108,7 @@ label {
     resize: vertical;
 }
 
-
+/* UC 3 */
 .profile-radio-content {
     display: flex;
     flex-direction: row;
@@ -122,7 +126,7 @@ label {
     margin-left: 12px;
 }
 
-
+/* UC5 */
 select {
     padding: 12px;
     border: 1px solid #ccc;
@@ -134,6 +138,7 @@ select {
     background-color: transparent;
 }
 
+/* UC7 */
 
 .buttonParent {
     display: flex;
@@ -166,6 +171,11 @@ select {
 .cancelButton {
     text-decoration: none;
     text-align: center;
+}
+error-output{
+    color: #fc0808;
+    font-family: Roboto;
+    font-style: italic;
 }
 
 @media only screen and (max-width:960px) {
