@@ -21,8 +21,8 @@ const createInnerHtml = () => {
             <td>${employeePayrollData._salary}</td>
             <td>${employeePayrollData._startDate}</td>
             <td>
-                <img id="${employeePayrollData._id}" onclick="remove(this)" alt="delete" src="C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\Icon\delete-black-18dp.svg">
-                <img id="${employeePayrollData._id}" alt="edit" onclick="update(this)" src="C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\Icon\create-black-18dp.svg">
+                <img id="${employeePayrollData._id}" onclick="remove(this)" alt="delete" src="file:///C:/Users/MY%20PC/OneDrive/Desktop/EmployeePayRollApp/Asserts/Icon/delete.png">
+                <img id="${employeePayrollData._id}" alt="edit" onclick="update(this)" src="file:///C:/Users/MY%20PC/OneDrive/Desktop/EmployeePayRollApp/Asserts/Icon/create%20(1).png">
             </td>
         </tr>
         `;
@@ -37,7 +37,7 @@ const createEmployeePayrollJSON = () => {
             _gender: "Female",
             _department: ["Finance"],
             _notes: "Good",
-            _profile: "C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\ProfileImages\Ellipse -1.png",
+            _profile: "C:\Users\MY PC\OneDrive\Desktop\EmployeePayRollApp\Asserts\ProfileImages\Ellipse -1.png",
             _startDate: "18/12/2016, 12:00:00 AM"
         },
         {
@@ -47,7 +47,7 @@ const createEmployeePayrollJSON = () => {
             _gender: "male",
             _department: ["Finance", "Sales"],
             _notes: "null",
-            _profile: "C:\Users\MY PC\Desktop\EmployeePayRollApp\Asserts\ProfileImages\Ellipse -7.png",
+            _profile: "C:\Users\MY PC\OneDrive\Desktop\EmployeePayRollApp\Asserts\ProfileImages\Ellipse -7.png",
             _startDate: "18/12/2020, 12:00:00 AM"
         }
     ];
