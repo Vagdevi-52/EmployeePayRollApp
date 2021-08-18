@@ -3,13 +3,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
     employeePayrollList = getEmployeePayrollDataFromStorage();
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
+    localStorage.removeItem('editEmp')
 });
 const getEmployeePayrollDataFromStorage = () => {
     return localStorage.getItem('EmployeePayrollList') ? JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];
 }
 const createInnerHtml = () => {
     const headerHtml = "<tr><th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>Start Date</th><th>Actions</th></tr>"
-    if (employeePayrollList.length == 0) return;
+    if (employeePayrollList.length == 0){
+        document.querySelector('#display').innerHTML = '';
+        return;
+    }
     let innerHtml = `${headerHtml}`;
     for (const employeePayrollData of employeePayrollList) {
         innerHtml = `${innerHtml}
@@ -21,8 +25,8 @@ const createInnerHtml = () => {
             <td>${employeePayrollData._salary}</td>
             <td>${employeePayrollData._startDate}</td>
             <td>
-                <img id="${employeePayrollData._id}" onclick="remove(this)" alt="delete" src="file:///C:/Users/MY%20PC/OneDrive/Desktop/EmployeePayRollApp/Asserts/Icon/delete.png">
-                <img id="${employeePayrollData._id}" alt="edit" onclick="update(this)" src="file:///C:/Users/MY%20PC/OneDrive/Desktop/EmployeePayRollApp/Asserts/Icon/create%20(1).png">
+                <img id="${employeePayrollData._id}" onclick="remove(this)" alt="delete" src="file:///C:/Users/Lavanya/Desktop/EmployeePayrollPay/Asserts/Icons/download%20(1)%20(1).png">
+                <img id="${employeePayrollData._id}" alt="edit" onclick="update(this)" src="file:///C:/Users/Lavanya/Desktop/EmployeePayrollPay/Asserts/Icons/download%20(2).png">
             </td>
         </tr>
         `;
@@ -32,23 +36,23 @@ const createInnerHtml = () => {
 const createEmployeePayrollJSON = () => {
     let employeePayrollListLocal = [{
             _id: new Date().getTime(),
-            _name: "Vagdevi",
-            _salary: "$ 700000",
+            _name: "Lavanya",
+            _salary: "$ 100000",
             _gender: "Female",
-            _department: ["Finance"],
-            _notes: "Good",
-            _profile: "C:\Users\MY PC\OneDrive\Desktop\EmployeePayRollApp\Asserts\ProfileImages\Ellipse -1.png",
-            _startDate: "18/12/2016, 12:00:00 AM"
+            _department: ["Engineering", "Hr"],
+            _notes: "Excellent Employee",
+            _profile: "../assets/profile-images/Ellipse -1.png",
+            _startDate: "18/09/2020, 12:00:00 AM"
         },
         {
             _id: new Date().getTime() + 1,
-            _name: "Prabhas",
+            _name: "Akhil",
             _salary: "$ 70000",
             _gender: "male",
-            _department: ["Finance", "Sales"],
-            _notes: "null",
-            _profile: "C:\Users\MY PC\OneDrive\Desktop\EmployeePayRollApp\Asserts\ProfileImages\Ellipse -7.png",
-            _startDate: "18/12/2020, 12:00:00 AM"
+            _department: ["Engineering", "Sales"],
+            _notes: null,
+            _profile: "../assets/profile-images/Ellipse -8.png",
+            _startDate: "18/09/2020, 12:00:00 AM"
         }
     ];
     return employeePayrollListLocal;
@@ -60,7 +64,7 @@ const getDeptHtml = (deptList) => {
     }
     return deptHtml;
 }
-function remove(node){
+remove = function(node){
     let empPayrollData = employeePayrollList.find(empData => empData._id == node.id);
     if (!empPayrollData) return;
     const index = employeePayrollList
@@ -69,6 +73,12 @@ function remove(node){
     employeePayrollList.splice(index, 1);
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
     document.querySelector('.emp-count').textContent = employeePayrollList.length;
-    alert("User deleted is : "+empPayrollData._name+"with id :"+empPayrollData._id);
+    alert("User deleted is : "+empPayrollData._name+" with id :"+empPayrollData._id);
     createInnerHtml();
 }
+update = function(node){
+    let empData = employeePayrollList.find((emp) => emp._id == node.id);
+    if (!empData) return;
+    localStorage.setItem("editEmp", JSON.stringify(empData));
+    window.location.replace(site_properties.employee_payroll_page);
+}; 
