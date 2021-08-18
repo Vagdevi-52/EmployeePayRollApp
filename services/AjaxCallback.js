@@ -37,7 +37,7 @@ function getUserDetails(data)
 makeAJAXCall("GET", getUrl, getUserDetails, true);
 console.log("Made GET AJAX call to the server at " + showTime());
 
-const deleteURL = "http://localhost:3000/employees/4";
+const deleteURL = "http://127.0.0.1:3000/employees/13";
 function userDeletedData(data)
 {
     console.log("User Deleted : "+ data);
@@ -45,7 +45,7 @@ function userDeletedData(data)
 makeAJAXCall("DELETE", deleteURL, userDeletedData, false);
 console.log("Made DELETE AJAX call to the server at " + showTime());
 
-const postURL = "http://localhost:3000/employees";
+const postURL = "http://127.0.0.1:3000/employees";
 const empData = {
     "_name": "Shruti",
     "_gender": "Female",
